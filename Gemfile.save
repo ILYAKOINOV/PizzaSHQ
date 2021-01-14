@@ -1,0 +1,3 @@
+source "https://rubygems.org"
+
+set :database, {adapter: "sqlite3", database: "barbershop.db"}gem "sinatra"

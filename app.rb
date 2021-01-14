@@ -5,8 +5,7 @@ require 'sinatra/activerecord'
 
 set :database, {adapter: "sqlite3", database: "pizzashq.db"}
 
-class Product < ActiveRecord::Base
-		
+class Product < ActiveRecord::Base		
 end
 
 
