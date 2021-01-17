@@ -32,5 +32,6 @@ class AddProducts < ActiveRecord::Migration[6.1]
   		:is_best_offer => false,
   		:path_to_image => '/images/veg.jpg'
   	})
+  
   end
 end
