@@ -8,6 +8,9 @@ set :database, {adapter: "sqlite3", database: "pizzashq.db"}
 class Product < ActiveRecord::Base		
 end
 
+class Order < ActiveRecord::Base
+end	
+
 get '/' do
 	@products = Product.all
 	erb :index			
@@ -17,8 +20,14 @@ get '/about' do
 	erb :about
 end
 
+post '/place_order' do
+	@order = Order.create params[:order]
+	erb "Thank you! Your order has been placed."
+	erb :order_placed
+end
+
 post '/cart' do
-	@orders_input = params[:orders]
+	@orders_input = params[:orders_input]
 	@items = parse_orders_input @orders_input
 
 	@items.each do |item|
